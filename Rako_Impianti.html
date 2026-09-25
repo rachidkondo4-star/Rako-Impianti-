@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rako Impianti | Impianti elettrici e automazione</title>
+<meta name="description" content="Rako Impianti — impianti elettrici, automazione, domotica e manutenzione.">
+<style>
+:root{
+  --ink:#202326; --muted:#686d72; --paper:#f7f7f5; --white:#fff;
+  --accent:#d79b25; --line:#deded9; --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--white);line-height:1.55}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.top{font-size:13px;border-bottom:1px solid var(--line);background:#fff}
+.top .container{display:flex;justify-content:flex-end;gap:25px;padding:9px 0;color:var(--muted)}
+header{background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:23px;letter-spacing:-.5px}
+.logo span{font-weight:400;color:var(--muted)}
+nav{display:flex;gap:30px;font-size:14px}
+nav a:hover{color:#a97514}
+.cta{background:var(--ink);color:#fff;padding:12px 18px;font-size:14px}
+.hero{background:var(--paper);padding:85px 0 90px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.kicker{text-transform:uppercase;letter-spacing:2px;font-size:12px;color:#9a6c15;font-weight:700}
+h1{font-size:clamp(43px,6vw,76px);line-height:1.02;letter-spacing:-3px;margin:18px 0 25px;max-width:760px}
+.hero p{font-size:18px;color:var(--muted);max-width:600px}
+.buttons{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 22px;background:var(--ink);color:white;font-size:14px}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid #bfc0bc}
+.hero-photo{height:510px;background:
+linear-gradient(135deg,rgba(20,20,20,.04),rgba(20,20,20,.14)),
+linear-gradient(90deg,#d8d8d4,#efefed);position:relative;overflow:hidden}
+.hero-photo:after{content:"RAKO IMPIANTI";position:absolute;left:25px;bottom:22px;color:#fff;font-size:12px;letter-spacing:3px;font-weight:700}
+.fake-photo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8b8d89;font-size:14px;letter-spacing:1px}
+.intro{padding:90px 0}
+.two{display:grid;grid-template-columns:.7fr 1.3fr;gap:90px}
+h2{font-size:42px;line-height:1.1;letter-spacing:-1.5px;margin:0 0 20px}
+.lead{font-size:21px;color:#45494d;max-width:800px}
+.small{font-size:14px;color:var(--muted)}
+.services{background:var(--paper);padding:85px 0}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:45px}
+.service{padding:30px 25px 35px 0;border-bottom:1px solid var(--line)}
+.service:not(:nth-child(3n+1)){padding-left:25px;border-left:1px solid var(--line)}
+.num{font-size:12px;color:#a97514;font-weight:700}
+.service h3{font-size:21px;margin:12px 0 8px}
+.projects{padding:90px 0}
+.project-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;margin-top:45px}
+.project{min-height:300px;background:#d9d9d5;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.project.big{min-height:500px}
+.project:nth-child(2){background:#c8c9c5}
+.project:nth-child(3){background:#e1e1dd}
+.project:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.55))}
+.project-info{position:relative;z-index:2;color:#fff;padding:28px}
+.project-info small{letter-spacing:1.5px;text-transform:uppercase}
+.project-info h3{font-size:25px;margin:6px 0 0}
+.about{background:var(--ink);color:#fff;padding:90px 0}
+.about .small{color:#c7c8c8}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.checks{margin-top:25px;display:grid;gap:12px}
+.checks div{border-top:1px solid #444;padding-top:12px}
+.contact{padding:90px 0}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.contact-list{display:grid;gap:22px;margin-top:35px}
+.contact-list b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#8a6a28;margin-bottom:3px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input,textarea,select{width:100%;border:1px solid #cfcfca;padding:15px;background:#fff;font:inherit}
+textarea{min-height:150px;resize:vertical}
+.full{grid-column:1/-1}
+footer{background:#181a1b;color:#c9c9c7;padding:28px 0;font-size:13px}
+.footer-flex{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:800px){
+ .top{display:none}.nav{height:68px}nav{display:none}.container{width:min(100% - 28px,var(--max))}
+ .hero{padding:55px 0}.hero-grid,.two,.about-grid,.contact-grid,.project-grid{grid-template-columns:1fr;gap:40px}
+ .hero-photo{height:330px}h1{letter-spacing:-2px}.service-grid{grid-template-columns:1fr}
+ .service,.service:not(:nth-child(3n+1)){padding:25px 0;border-left:0}
+ .project.big{min-height:330px}.project{min-height:260px}
+ .footer-flex{flex-direction:column}
+ form{grid-template-columns:1fr}.full{grid-column:auto}
+}
+</style>
+
+
+
+</head>
+<body>
+
+
+
+<div class="top"><div class="container"><span>Impianti elettrici</span><span>Automazione</span><span>Manutenzione</span></div></div>
+
+<header>
+<div class="container nav">
+  <a class="logo" href="#home">RAKO <span>IMPIANTI</span></a>
+  <nav><a href="#azienda">Azienda</a><a href="#servizi">Servizi</a><a href="#lavori">Lavori</a><a href="#contatti">Contatti</a></nav>
+  <a class="cta" href="#contatti">Richiedi un preventivo</a>
+</div>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+ <div>
+  <div class="kicker">Impianti elettrici · Automazione · Domotica</div>
+  <h1>Soluzioni elettriche pensate per durare.</h1>
+  <p>Rako Impianti realizza e manutiene impianti elettrici per abitazioni, attività e realtà produttive, con attenzione a sicurezza, ordine e affidabilità.</p>
+  <div class="buttons"><a class="btn" href="#contatti">Parliamo del tuo progetto</a><a class="btn alt" href="#servizi">Scopri i servizi</a></div>
+ </div>
+ <div class="hero-photo"><div class="fake-photo">SPAZIO PER UNA FOTO REALE DEI TUOI LAVORI</div></div>
+</div>
+</section>
+
+<section class="intro" id="azienda">
+<div class="container two">
+ <div><div class="kicker">Rako Impianti</div><h2>Un lavoro fatto bene si vede nei dettagli.</h2></div>
+ <div>
+  <p class="lead">Dalla progettazione alla messa in servizio, ogni intervento viene seguito con un approccio concreto e ordinato.</p>
+  <p class="small">Il sito è una base professionale per la futura attività: ragione sociale, sede, partita IVA, telefono, email e riferimenti potranno essere inseriti quando saranno definitivi.</p>
+ </div>
+</div>
+</section>
+
+<section class="services" id="servizi">
+<div class="container">
+ <div class="kicker">Cosa facciamo</div><h2>Servizi</h2>
+ <div class="service-grid">
+  <article class="service"><div class="num">01</div><h3>Impianti civili</h3><p class="small">Realizzazione e rifacimento di impianti elettrici per abitazioni e ristrutturazioni.</p></article>
+  <article class="service"><div class="num">02</div><h3>Impianti industriali</h3><p class="small">Distribuzione elettrica, collegamenti e interventi dedicati agli ambienti produttivi.</p></article>
+  <article class="service"><div class="num">03</div><h3>Automazione</h3><p class="small">Soluzioni per comandare, controllare e rendere più efficienti gli impianti.</p></article>
+  <article class="service"><div class="num">04</div><h3>Domotica</h3><p class="small">Illuminazione, controllo e gestione intelligente degli ambienti.</p></article>
+  <article class="service"><div class="num">05</div><h3>Quadri elettrici</h3><p class="small">Assemblaggio e organizzazione dei quadri in base alle esigenze dell'impianto.</p></article>
+  <article class="service"><div class="num">06</div><h3>Manutenzione</h3><p class="small">Controlli, interventi e assistenza per mantenere gli impianti efficienti.</p></article>
+ </div>
+</div>
+</section>
+
+<section class="projects" id="lavori">
+<div class="container">
+ <div class="kicker">Portfolio</div><h2>Alcuni lavori</h2>
+ <p class="small">Qui potrai inserire fotografie vere dei cantieri e degli impianti realizzati.</p>
+ <div class="project-grid">
+  <div class="project big"><div class="project-info"><small>01 · Impianto</small><h3>Realizzazione elettrica</h3></div></div>
+  <div class="project"><div class="project-info"><small>02 · Automazione</small><h3>Controllo e gestione</h3></div></div>
+  <div class="project"><div class="project-info"><small>03 · Manutenzione</small><h3>Intervento tecnico</h3></div></div>
+ </div>
+</div>
+</section>
+
+<section class="about">
+<div class="container about-grid">
+ <div><div class="kicker">Il nostro approccio</div><h2>Serietà, precisione e attenzione al lavoro.</h2></div>
+ <div>
+  <p class="lead">Un impianto non è solo quello che si vede: contano progettazione, materiali, ordine e corretta esecuzione.</p>
+  <div class="checks"><div>01 — Lavorazioni ordinate</div><div>02 — Soluzioni adatte al progetto</div><div>03 — Attenzione alla sicurezza</div><div>04 — Assistenza nel tempo</div></div>
+ </div>
+</div>
+</section>
+
+<section class="contact" id="contatti">
+<div class="container contact-grid">
+ <div><div class="kicker">Contatti</div><h2>Raccontaci cosa devi realizzare.</h2><p class="small">Compila il modulo per una richiesta di informazioni o preventivo.</p>
+  <div class="contact-list">
+   <div><b>Email</b>info@rakoimpianti.it</div>
+   <div><b>Telefono</b>+39 000 000 0000</div>
+   <div><b>Sede</b>Italia — dati in aggiornamento</div>
+  </div>
+ </div>
+ <form onsubmit="event.preventDefault(); alert('Grazie! Questo modulo è una demo: per ricevere davvero le richieste va collegato a un servizio email o a un backend.');">
+  <input placeholder="Nome e cognome" required><input type="email" placeholder="Email" required>
+  <input placeholder="Telefono"><select><option>Tipo di intervento</option><option>Impianto elettrico</option><option>Automazione</option><option>Domotica</option><option>Manutenzione</option><option>Altro</option></select>
+  <textarea class="full" placeholder="Descrivi brevemente il lavoro..."></textarea>
+  <button class="btn full" type="submit">Invia richiesta</button>
+ </form>
+</div>
+</section>
+</main>
+
+<footer><div class="container footer-flex"><span>© 2026 Rako Impianti</span><span>Sito web — progetto dimostrativo</span></div></footer>
+</body>
+</html>
